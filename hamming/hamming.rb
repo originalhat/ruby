@@ -1,12 +1,13 @@
 module Hamming
-  def self.compute(first_sequence, second_sequence)
-    raise ArgumentError if first_sequence.length != second_sequence.length
+  def self.compute(first_strand, second_strand)
+    raise ArgumentError if first_strand.length != second_strand.length
 
-    first_sequence  = first_sequence.split('')
-    second_sequence = second_sequence.split('')
-
-    return first_sequence.select.with_index do |char, index|
-      char != second_sequence[index]
-    end.length
+    return first_strand.each_char.with_index.count do |char, index|
+      char != second_strand[index]
+    end
   end
+end
+
+module BookKeeping
+  VERSION = 3
 end
