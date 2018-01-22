@@ -1,16 +1,12 @@
 module Raindrops
   def self.convert(number_of_drops)
-    sound = ''
+    sounds = ''
 
-    sound << 'Pling' if number_of_drops % 3 == 0
-    sound << 'Plang' if number_of_drops % 5 == 0
-    sound << 'Plong' if number_of_drops % 7 == 0
+    sounds << 'Pling' if number_of_drops % 3 == 0
+    sounds << 'Plang' if number_of_drops % 5 == 0
+    sounds << 'Plong' if number_of_drops % 7 == 0
 
-    if sound.length == 0
-      return number_of_drops.to_s
-    end
-
-    sound
+    sounds.length == 0 ? number_of_drops.to_s : sounds
   end
 end
 
